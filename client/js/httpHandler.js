@@ -17,7 +17,7 @@
     $.ajax({
       type: 'POST',
       data: formData,
-      url: 'FILL_ME_IN',
+      url: serverUrl,
       cache: false,
       contentType: false,
       processData: false,
@@ -38,11 +38,14 @@
       cache: false,
       contentType: false,
       processData: false,
-      success: () => {
-        console.log('Got keypress');
+      success: (string) => {
+        // if (string !== '') {
+        //   console.log('Got keypress ', string)
+        // };
+        SwimTeam.move(string.toLowerCase());
       }
     });
-    setTimeout(ajaxGetKeypress, 1000);
+    setTimeout(ajaxGetKeypress, 5000);
   };
 
   ajaxGetKeypress();
