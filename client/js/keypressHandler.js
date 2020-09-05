@@ -1,3 +1,4 @@
+// const $ = require('jquery');
 
 $('body').on('keydown', (event) => {
   var arrowPress = event.key.match(/Arrow(Up|Down|Left|Right)/);
@@ -8,3 +9,9 @@ $('body').on('keydown', (event) => {
 });
 
 console.log('Client is running in the browser!');
+// keypress or validMessage => event on server get accept
+// SwimTeam.move(direction. )  direction = keypress/valiemessage
+// $('body).on('keyserver, (event) => {
+ // var serverPress = event.key.match(/Arrow(Up|Down|Left|Right)/);
+
+//})

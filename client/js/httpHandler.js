@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
   const serverUrl = 'http://127.0.0.1:3000';
 
@@ -26,9 +26,29 @@
         window.location = window.location.href;
       }
     });
+
   };
 
-  $('form').on('submit', function(e) {
+  const ajaxGetKeypress = () => {
+    var keypress = '';
+    $.ajax({
+      type: 'GET',
+      data: null,
+      url: serverUrl,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: () => {
+        console.log('Got keypress');
+      }
+    });
+    setTimeout(ajaxGetKeypress, 1000);
+  };
+
+  ajaxGetKeypress();
+
+
+  $('form').on('submit', function (e) {
     e.preventDefault();
 
     var form = $('form .file')[0];
